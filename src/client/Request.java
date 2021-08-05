@@ -18,6 +18,7 @@ public class Request extends Thread {
              BufferedReader reader = new BufferedReader(
                      new InputStreamReader(socket.getInputStream())
              )) {
+            socket.setSoTimeout(10000);
             System.out.println("Connected to server"+Thread.currentThread().getName());
             writer.write(ClientService.createHttp(fileFormat));
             writer.newLine();

@@ -20,7 +20,6 @@ public class RequestHandler extends Thread {
              BufferedReader reader = new BufferedReader(
                      new InputStreamReader(socket.getInputStream())
              )) {
-            socket.setSoTimeout(10000);
             String request = reader.readLine();
             System.out.println("request " + request);
             String fileFormat = request.substring(4, request.indexOf(" HTTP"));
